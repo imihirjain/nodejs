@@ -71,3 +71,109 @@ const lodash = require("lodash");
 // const myArr = [1, 2, 3, 4, 5];
 // const reversed = lodash.reverse(myArr);
 // console.log(reversed);
+
+// File System methods
+// Read Stream
+// const readableStream = fs.createReadStream("example.txt", { encoding: "utf8" });
+
+// readableStream.on("data", (chunk) => {
+//   console.log(chunk);
+// });
+
+// readableStream.on("end", () => {
+//   console.log("Finished reading the file");
+// });
+
+// readableStream.on("error", (err) => {
+//   console.log("Error to read the file", err);
+// });
+
+// Write stream
+// const writeableStream = fs.createWriteStream("output2.txt");
+// writeableStream.write("Hello ");
+// writeableStream.write("World");
+
+// writeableStream.end();
+
+// writeableStream.on("finish", () => {
+//   console.log("Finished writing");
+// });
+
+// piping example copy content of one file to another
+// const readableStream = fs.createReadStream("example.txt");
+// const writeableStream = fs.createWriteStream("example-out.txt");
+
+// readableStream.pipe(writeableStream);
+
+// writeableStream.on("finish", () => {
+//   console.log("finished copied the file");
+// });
+
+// Readline system
+// const readline = require("readline");
+
+// const readableStream = fs.createReadStream("example.txt");
+
+// const rl = readline.createInterface({ input: readableStream });
+
+// rl.on("line", (line) => {
+//   console.log("Line:- ", line);
+// });
+
+// rl.on("close", () => {
+//   console.log("Read line finished reading the line");
+// });
+
+// Creating the directory
+// Asynchronous method
+// fs.mkdir("newDir", (err) => {
+//   if (err) {
+//     return console.log("Error creating directory", err);
+//   }
+//   console.log("New directory created successfully");
+// });
+
+// Synchronous method
+// fs.mkdirSync("newDir2");
+// console.log("Directory created successfully");
+
+// Read the directory
+// Asynchrounously
+// fs.readdir("./", (err, files) => {
+//   if (err) {
+//     return console.log("Error in reading the file", err);
+//   }
+//   console.log("Directory content ", files);
+// });
+
+// Synchronously
+// const files = fs.readdirSync("./");
+// console.log("Directory Content ", files);
+
+// Checking directory exist
+// const dirName = "newDir3";
+// if (fs.existsSync(dirName)) {
+//   console.log("Directory exist");
+// } else {
+//   console.log("Directory not exist");
+// }
+
+// Delete directory
+// rmdir remove only empty directory
+// fs.rmdir("newDir", (err) => {
+//   if (err) {
+//     return console.log("Unable to delete the directory");
+//   }
+//   console.log("Directory removed successfully");
+// });
+
+// fs.rmdirSync("newDir2");
+// console.log("Directory removed synchronously");
+
+// rm removed non empty directory
+// fs.rm("newDir", { recursive: true }, (err) => {
+//   if (err) {
+//     return console.log("Error removing directory", err);
+//   }
+//   console.log("Directory removed");
+// });
